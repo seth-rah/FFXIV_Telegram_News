@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  registrynotifications:
+    image: sethrah/dockerregistrynotifications
+    restart: always
+    dns: 8.8.8.8
+    environment:
+      - TELEGRAM_BOT_TOKEN=...
+      - TELEGRAM_CHAT_ID=...
+    ports:
+      - 1337:1337
+    network_mode: "bridge"
