@@ -1,0 +1,24 @@
+{
+  "name": "ffxivtelegramnews",
+  "version": "1.0.0",
+  "description": "A bot for telegram messenger that posts news updates for Final Fantasy XIV",
+  "main": "XIVNotifier.js",
+  "dependencies": {
+    "jsdom": "^16.4.0",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seth-rah/FFXIV_Telegram_News.git"
+  },
+  "author": "Seth-Rah",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/seth-rah/FFXIV_Telegram_News/issues"
+  },
+  "homepage": "https://github.com/seth-rah/FFXIV_Telegram_News#readme"
+}
