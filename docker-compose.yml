@@ -1,12 +1,9 @@
-version: "3.8"
+version: "2"
 services:
-  registrynotifications:
-    image: sethrah/dockerregistrynotifications
+  ffxivnotifications:
+    image: sethrah/ffxivtelegramnews
     restart: always
-    dns: 8.8.8.8
     environment:
       - TELEGRAM_BOT_TOKEN=...
       - TELEGRAM_CHAT_ID=...
-    ports:
-      - 1337:1337
     network_mode: "bridge"

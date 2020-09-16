@@ -1,7 +1,7 @@
 FROM node:12-alpine
 
 # Create app directory
-WORKDIR /usr/src/xivtgnews
+WORKDIR /usr/src/ffxivtelegramnews
 
 # Install app dependencies
 

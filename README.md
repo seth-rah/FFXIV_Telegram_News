@@ -1,16 +1,16 @@
 # FFXIV_Telegram_News
-A bot for telegram messenger that posts news updates for Final Fantasy XIV
+A bot for telegram messenger that posts news updates for Final Fantasy XIV posted to the Lodestone
 
 ## What is this?
 
-This is a hobby project to monitor updates in the news sections of [FFXIV Lodestone](https://eu.finalfantasyxiv.com/lodestone/)
+This is a hobby project to monitor updates in the news sections of [FFXIV Lodestone](https://eu.finalfantasyxiv.com/lodestone/) and then post it to a group chat or channel in [Telegram Messenger](https://telegram.org/)
 
 ## How to Run
 
 Multiple -e entries for various environments. environment variables listed further down.
 
 ```
-docker run -d -e VARIABLE1=secret2 -e VARIABLE2=secret2 sethrah/ffxivtelegramnews
+docker run -d -e TELEGRAM_BOT_TOKEN=secret1 -e TELEGRAM_CHAT_ID=secret2 sethrah/ffxivtelegramnews
 ```
 
 ### Docker Compose
