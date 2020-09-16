@@ -57,13 +57,13 @@ function checkValues() {
 		console.log(`Topics: ${nValueTopics}`)
 
 		const nValueNotices = dom.window.document.querySelector(notices).getAttribute('href');
-		console.log(`"Notices: ${nValueNotices}`)
+		console.log(`Notices: ${nValueNotices}`)
 
 		const nValueMaintenance = dom.window.document.querySelector(maintenance).getAttribute('href');
-		console.log(`"Maintenance: ${nValueMaintenance}`)
+		console.log(`Maintenance: ${nValueMaintenance}`)
 
 		const nValueUpdates = dom.window.document.querySelector(updates).getAttribute('href');
-		console.log(`"Updates : ${nValueUpdates}`)
+		console.log(`Updates : ${nValueUpdates}`)
 
 		// Provide initial value to pValues and update pValue if different from nValues.
 		// Check if the value has been set yet, and if it hasn't , then allocate a value.
