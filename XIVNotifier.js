@@ -53,19 +53,19 @@ function checkValues() {
 	JSDOM.fromURL(url, options).then(dom => {
 
 
-			// Get the values for the monitored elements
-			console.log('-----------------------------------------------')
-			const nValueTopics = dom.window.document.querySelector(topics).getAttribute('href');
-			console.log(nValueTopics)
+		// Get the values for the monitored elements
+		console.log('-----------------------------------------------')
+		const nValueTopics = dom.window.document.querySelector(topics).getAttribute('href');
+		console.log(`Topics: ${nValueTopics}`)
 
-			const nValueNotices = dom.window.document.querySelector(notices).getAttribute('href');
-			console.log(nValueNotices)
+		const nValueNotices = dom.window.document.querySelector(notices).getAttribute('href');
+		console.log(`"Notices: ${nValueNotices}`)
 
-			const nValueMaintenance = dom.window.document.querySelector(maintenance).getAttribute('href');
-			console.log(nValueMaintenance)
+		const nValueMaintenance = dom.window.document.querySelector(maintenance).getAttribute('href');
+		console.log(`"Maintenance: ${nValueMaintenance}`)
 
-			const nValueUpdates = dom.window.document.querySelector(updates).getAttribute('href');
-			console.log(nValueUpdates)
+		const nValueUpdates = dom.window.document.querySelector(updates).getAttribute('href');
+		console.log(`"Updates : ${nValueUpdates}`)
 
 
 			// Provide initial value to pValues and update pValue if different from nValues.
