@@ -46,12 +46,10 @@ checkValues();
 //start invoking the function, *1000 because the delay should be in milliseconds
 setInterval(checkValues, delay * 1000);
 
-
 function checkValues() {
 
 	//jsdom will get the page from the provided url and then run the fuction
 	JSDOM.fromURL(url, options).then(dom => {
-
 
 		// Get the values for the monitored elements
 		console.log('-----------------------------------------------')
@@ -67,48 +65,46 @@ function checkValues() {
 		const nValueUpdates = dom.window.document.querySelector(updates).getAttribute('href');
 		console.log(`"Updates : ${nValueUpdates}`)
 
-
-			// Provide initial value to pValues and update pValue if different from nValues.
-			// Check if the value has been set yet, and if it hasn't , then allocate a value.
-			if (typeof pValueTopics === 'undefined' ||
+		// Provide initial value to pValues and update pValue if different from nValues.
+		// Check if the value has been set yet, and if it hasn't , then allocate a value.
+		if (typeof pValueTopics === 'undefined' ||
 			typeof pValueNotices === 'undefined' ||
 			typeof pValueMaintenance === 'undefined' ||
 			typeof pValueUpdates === 'undefined') {
 
-				// set pValue to monitored value.
-				console.log(`initialization for pValues = ${nValueTopics}, ${nValueNotices}, ${nValueMaintenance}, ${nValueUpdates}`);
-				telegramClient.sendMessage(telegramChat, `<b>Initializing</b>`, {parse_mode: 'HTML'});
-				pValueTopics = nValueTopics;
-				pValueNotices = nValueNotices;
-				pValueMaintenance = nValueMaintenance;
-				pValueUpdates = nValueUpdates;
-			};
+			// set pValue to monitored value.
+			console.log(`initialization for pValues = ${nValueTopics}, ${nValueNotices}, ${nValueMaintenance}, ${nValueUpdates}`);
+			telegramClient.sendMessage(telegramChat, `<b>Initializing</b>`, { parse_mode: 'HTML' });
+			pValueTopics = nValueTopics;
+			pValueNotices = nValueNotices;
+			pValueMaintenance = nValueMaintenance;
+			pValueUpdates = nValueUpdates;
+		};
 
-			// Run through checks to see if the value has changed since the last check
-			// Send a message to telegram with the new value and update the old value.
-			if (pValueTopics !== nValueTopics) {
-				console.log(`Topics value changed from ${pValueTopics} to ${nValueTopics}`);
-				telegramClient.sendMessage(telegramChat, `<b>Topics section news update</b>: \n https://eu.finalfantasyxiv.com${nValueTopics}`, {parse_mode: 'HTML'});
-				pValueTopics = nValueTopics;
-			};
+		// Run through checks to see if the value has changed since the last check
+		// Send a message to telegram with the new value and update the old value.
+		if (pValueTopics !== nValueTopics) {
+			console.log(`Topics value changed from ${pValueTopics} to ${nValueTopics}`);
+			telegramClient.sendMessage(telegramChat, `<b>Topics section news update</b>: \n https://eu.finalfantasyxiv.com${nValueTopics}`, { parse_mode: 'HTML' });
+			pValueTopics = nValueTopics;
+		};
 
-			if (pValueNotices !== nValueNotices) {
-				console.log(`Notices value changed from ${pValueNotices} to ${nValueNotices}`);
-				telegramClient.sendMessage(telegramChat, `<b>Notices section news update</b>: \n https://eu.finalfantasyxiv.com${nValueNotices}`, {parse_mode: 'HTML'});
-				pValueNotices = nValueNotices;
-			};
+		if (pValueNotices !== nValueNotices) {
+			console.log(`Notices value changed from ${pValueNotices} to ${nValueNotices}`);
+			telegramClient.sendMessage(telegramChat, `<b>Notices section news update</b>: \n https://eu.finalfantasyxiv.com${nValueNotices}`, { parse_mode: 'HTML' });
+			pValueNotices = nValueNotices;
+		};
 
-			if (pValueMaintenance !== nValueMaintenance) {
-				console.log(`Maintenance value changed from ${pValueMaintenance} to ${nValueMaintenance}`);
-				telegramClient.sendMessage(telegramChat, `<b>Maintenance section news update</b>: \n https://eu.finalfantasyxiv.com${nValueMaintenance}`, {parse_mode: 'HTML'});
-				pValueMaintenance = nValueMaintenance;
-			};
+		if (pValueMaintenance !== nValueMaintenance) {
+			console.log(`Maintenance value changed from ${pValueMaintenance} to ${nValueMaintenance}`);
+			telegramClient.sendMessage(telegramChat, `<b>Maintenance section news update</b>: \n https://eu.finalfantasyxiv.com${nValueMaintenance}`, { parse_mode: 'HTML' });
+			pValueMaintenance = nValueMaintenance;
+		};
 
-			if (pValueUpdates !== nValueUpdates) {
-				console.log(`Updates value changed from ${pValueUpdates} to ${nValueUpdates}`);
-				telegramClient.sendMessage(telegramChat, `<b>Update section news update</b>: \n https://eu.finalfantasyxiv.com${nValueUpdates}`, {parse_mode: 'HTML'});
-				pValueUpdates = nValueUpdates;
-			};
-		}
-	);
+		if (pValueUpdates !== nValueUpdates) {
+			console.log(`Updates value changed from ${pValueUpdates} to ${nValueUpdates}`);
+			telegramClient.sendMessage(telegramChat, `<b>Update section news update</b>: \n https://eu.finalfantasyxiv.com${nValueUpdates}`, { parse_mode: 'HTML' });
+			pValueUpdates = nValueUpdates;
+		};
+	});
 };
